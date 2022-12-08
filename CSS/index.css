@@ -1,0 +1,360 @@
+/**********************************************************/
+/* Web del Romanticismo                                   */
+/* Hoja de estilo para index.html                         */
+/* Autor: David Solera Romero                             */
+/* Versión: 1.0                                           */
+/* 11 de noviembre de 2022                                */
+/**********************************************************/
+
+/* Estilo general                                         */
+
+@font-face {
+    src: url('../Fuentes/Barcelona19-20.ttf' );
+    font-family: titulos; /* familia de un tipo de letra */
+           }
+
+@font-face {
+    src: url('../fonts/Quicksand-VariableFont_wght.ttf');
+    font-family: textos; /* familia de un tipo de letra */
+           }
+
+* {box-sizing: border-box;} /* El padding se descuenta del width */
+
+body{
+    margin:0;padding:0; /* quitamos por defectos */
+    font-family: textos; /* familia de texto */
+    font-size: 1.25rem;
+    background-color:#61635f
+}
+
+#wrapper {
+    width:80%;
+    background-color: #fff;
+    margin:auto;
+}
+
+h1,h2,h3{
+    font-family: titulos;
+    color: #2C2B1F;
+}
+
+section {padding: 6% 0;} /* siempre voy a querer que el contenido de cualquier sección
+                            quede separado del borde superior/inferior */
+
+
+.textos {
+    font-family: textos;
+     font-size: 1.35rem;
+     text-indent: 4rem;
+     text-align: left;
+     width: 100%;
+     padding: 3% 2%;
+     border-left: rgb(15, 13, 13) 7.5px solid;}
+
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 30px; height: 30px; border-radius: 50%;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    color:#000000;
+    box-sizing: content-box;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/*************** BARRA DE NAVEGACIÓN ********************************/
+
+/***** Para hacer sticky la barra de navegación *****/
+
+nav {
+  position: sticky;
+  top:0;
+  z-index: 999; /* marca el nivel de capa en el que debe aparecer un elemento*/
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+  background-color: #333;
+  overflow: hidden;
+  /* opacity:0.5; se usa para disminuir la opacidad de la barra */
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: rgb(209, 203, 203);
+  color: black;
+  font-weight: bold;
+  transition: 0.5s;
+}
+
+/* Add an active class to highlight the current page */
+.topnav a.active {
+  background-color: #333;
+  color: white;
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+  display: none;
+  padding:0px; /* añadido para que no engorde la barra con el icono de la hamburguesa */
+}
+
+/* LAS MEDIA QUERIES DE MI BARRA DE NAVEGACIÓN ESTARÁN AQUÍ */
+
+@media screen and (max-width: 680px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+@media screen and (max-width: 680px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+/*************** HERO SECTION VERSIÓN 1: FOTO + TEXTO ***************/
+
+#hero{background-image: url('../images/herosection/herosection.jpg'); /* imagen fondo */
+       height:100vh; /* para obligar a que se vea más allá del contenido (alto imagen) */
+       background-repeat: no-repeat; /* no la repitas */
+       background-size: cover; /* cubre todo el fondo */
+       background-position: 33%; /* fija lo que hay en el medio o lo que indiquemos */
+
+       padding-left:4%; /* espacio para el texto por la izquierda */
+       padding-top:4%; /* espacio para el texto por arriba */
+    }
+
+#titulo{background-color: rgba(255,255,255,0.275); /* color de fondo y luego transparencia */
+         width: 39%; /* ancho */ 
+         padding: 2%; /* borde interior de un bloque */
+         border-radius: 30%; /* redondear esquinas de un bloque */
+         text-align: center; /* alinear el texto al centro */
+         font-family: titulos; /* tipo de letra utilizada */
+         font-size: 3rem; /* tamaño triple de lo normal */
+         color:#2C2B1F;
+         }
+
+/*************** INTRODUCCIÓN ****************/
+
+#intro{ padding-left: 5%;
+}
+
+.titulo-seccion {
+    font-family: titulos;
+    font-size: 2.6rem;
+    color:#2C2B1F;
+    text-align: center;
+    padding-bottom:40px;
+}
+
+/*************** GRID IDEAS ******************/
+
+#ideas {background-color: #e9e3dd;}
+
+/* vamos a montar un grid en dos columnas al 50% */
+/* lo primero que necesito es un contenedor grid */
+
+#grid2 {
+    display:grid;
+    grid-template-columns: 50% 50%;
+}
+
+.grid3 {
+    display:grid;
+    grid-template-columns: 25% 25% 50%;
+    font-size: 1rem;
+    padding-bottom: 11%;
+}
+
+/* selecciono las imágenes DENTRO de una columna y les aplico el 100% 
+   que es el ancho total de la columna */
+
+.col2 img {width:100%;}
+
+.coltexto {padding: 4%;
+           text-align: justify;}
+
+.coltexto li {margin-bottom: 10px;}
+.coltexto ul {list-style-type: square;} /* Para meter imagen es list-style-image: url(); */
+
+.col3{padding:6%;
+      padding-top: 8%;
+      margin:auto}
+
+.col3 img {width:50%;
+           display: block;
+           margin: auto; } /* 100% de la ubicación donde se encuentra la imagen */
+
+#ancha{padding:3%;}
+
+
+/*************** GRID AUTORES ****************/
+
+.grid4 {
+    display:grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    font-size: 1.4rem;
+}
+
+.col4{padding:6%;}
+
+/*************** CARDS ***********************/
+
+.card {
+    /* Sombras para la card */
+    box-shadow: 0 4px 8px 0 rgba(15, 15, 15, 0.2);
+    transition: 1s;
+    padding: 5%;
+  }
+  
+  /* On mouse-over, add a deeper shadow */
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(26, 24, 24, 0.2);
+  }
+  
+  /* Padding dentro del contenedor de la card */
+  .container {
+    text-align: center;
+    padding: 2px 16px;
+    background-color: azure;
+    margin-top:-6px;
+  }
+
+.card img {width:100%;
+           height: 275px; /* esto no debe hacerse */
+           border-radius:50%;
+           filter:sepia();
+           opacity:0.75;} /* Seleccionamos el ancho de la imagen de la card */
+
+.card img:hover {opacity:1;
+                 transition:1s;}
+
+.boton {text-decoration: none;
+        font-weight: bold;
+        color:rgb(245, 245, 245);
+        background-color: black;
+        padding: 5px 10px;
+        border-radius: 5px;}
+                
+.boton:hover {background-color: white;
+              color: black;
+              transition: 1s;}
+
+/*************** GALERÍA *********************/
+
+.container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+}
+
+/* Then style the iframe to fit in the container div with full height and width */
+.responsive-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/*************** FOOTER **********************/
+
+footer{background-color:#e9e3dd;}
+
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+  }
+  
+  .fa-twitter {
+    background: #55ACEE;
+    color: white;
+  }
+  
+  .fa-linkedin {
+    background: #007bb5;
+    color: white;
+  }
+  
+  .fa-youtube {
+    background: #bb0000;
+    color: white;
+  }
+  
+  .fa-instagram {
+    background: #125688;
+    color: white;
+  }
+  
+  .fa-pinterest {
+    background: #cb2027;
+    color: white;
+  }
+
+  .enlace {
+    text-decoration: none;
+    color: rgb(37, 36, 36);
+    font-weight: bold;
+    padding: 2px 5px;
+  }
+
+  .enlace:hover {
+    background-color: white;
+    color:black;
+    transition: 0.8s;
+  }
+                 
+/*************** MEDIA QUERIES ***************/
+
+@media only screen and (width<= 900px){
+    #wrapper {width:95%;}
+    #titulo {font-size: 2rem;
+             width: 43%;}
+    #titulo2 {font-size: 2.5rem;
+              width:57%;}
+    #grid2  {grid-template-columns: 100%;}
+    .grid4  {grid-template-columns: 50% 50%;}
+    .grid3  {grid-template-columns: 50% 50%;}
+    #ancha  {display: inline-block;
+             margin:auto;}
+    #parte2 {margin-top: -72px;}
+}
+
+@media only screen and (width<= 630px){
+    #wrapper{width:100%}
+    .grid4  {grid-template-columns: 100%;}
+    .grid3  {grid-template-columns: 100%;}
+    #ancha{text-align: center;}
+}
